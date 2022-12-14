@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return Sizer(
         builder: (context, orientation, deviceType) {
           return BlocProvider(
-            create: (context) => AppCubit(),
+            create: (context) => AppCubit()..createDatabase(),
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(

@@ -37,7 +37,8 @@ dependencies:
   flutter_bloc: ^8.1.1
   sqflite: ^2.2.2
   fluttertoast: ^8.1.2
-
+  country_code_picker: ^2.0.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
