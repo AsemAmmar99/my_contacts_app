@@ -38,7 +38,8 @@ dependencies:
   sqflite: ^2.2.2
   fluttertoast: ^8.1.2
   country_code_picker: ^2.0.2
-  
+  url_launcher: ^6.1.7
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -69,7 +69,22 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                 ),
               ),
-              cubit.screens[cubit.currentIndex],
+    BlocBuilder<AppCubit, AppState>(
+    builder: (context, state) {
+      if(state is AppGetDatabaseLoadingState){
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CircularProgressIndicator(color: darkBlue,),
+            ],
+          ),
+        );
+      }else {
+        return cubit.screens[cubit.currentIndex];
+      }
+    }
+    ),
             ],
           ),
           floatingActionButton: Visibility(
