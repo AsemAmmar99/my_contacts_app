@@ -39,11 +39,15 @@ class _HomeLayoutState extends State<HomeLayout> {
         }
       },
       builder: (context, state) {
-        return Scaffold(
+        return TweenAnimationBuilder(
+          tween: ColorTween(begin: black, end: darkSkyBlue),
+          duration: const Duration(milliseconds: 4000),
+          builder: (BuildContext context, Color? value, Widget? child) =>
+              Scaffold(
           key: scaffoldKey,
           extendBody: true,
           appBar: AppBar(
-            backgroundColor: darkSkyBlue,
+            backgroundColor: value,
             centerTitle: true,
             elevation: 8,
             title: DefaultText(
@@ -158,14 +162,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                   cubit.changeBottomSheetState(isShown: true, icon: Icons.add);
                 }
               },
-              backgroundColor: darkSkyBlue,
+              backgroundColor: value,
               elevation: 20,
               child: Icon(cubit.floatingActionButtonIcon, color: lightBlue,),
             ),
           ),
           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
           bottomNavigationBar: BottomAppBar(
-            color: darkSkyBlue,
+            color: value,
             elevation: 0,
             shape: const CircularNotchedRectangle(),
             notchMargin: 12,
@@ -189,6 +193,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                 ],
             ),
           ),
+        ),
         );
       },
     );
